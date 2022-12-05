@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*## Colors
+    ### Primary*/
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    /*### Neutral*/
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Cream);
+}
+
+.container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .balance {
+    width: 100%;
+    padding: .9rem 1rem;
+    margin-bottom: 1rem;
+    color: var(--Cream);
+    background-color: var(--Soft-red);
+    border-radius: .5rem;
+    position: relative;
+}
+
+.container .balance::after {
+    content: "";
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    top: 50%;
+    right: 11%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: .1rem solid var(--Cream);
+}
+
+.container .balance::before {
+    content: "";
+    position: absolute;
+    width: 1.4rem;
+    height: 1.4rem;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--Dark-brown);
+    border: .1rem solid var(--Dark-brown);
+}
+
+.container .balance p {
+    font-size: 0.625rem;
+    margin-bottom: .3rem;
+    color: var(--Cream);
+}
+
+.container .balance span {
+    font-size: 1.125rem;
+}
+
+.container .spending {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: .5rem;}
+
+.container .spending h1 {
+    font-size: 1.2rem;
+    color: var(--Dark-brown);
+    margin-bottom: .5rem;
+}
+
+.container .spending .week {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;}
+
+.container .spending .week > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: .1rem solid var(--Cream);
+}
+
+.container .spending .week div .day { 
+    width: 2rem;
+    margin-bottom: .5rem;
+    background-color: var(--Soft-red);
+    border-radius: .2rem;
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.container .spending .week  div .day-spent {
+    padding: .3rem .3rem;
+    font-size: 0.75rem;
+    color: var(--Cream);
+    background-color: var(--Dark-brown);
+    border-radius: .2rem;
+    margin-bottom: .3rem;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.container .spending .week  div:hover {
+    cursor: pointer;
+}
+
+.container .spending .week  div:hover .day-spent{
+    opacity: 1;
+}
+
+.container .spending .week  div:hover .day{
+    opacity: .5;  
+}
+
+.container .spending .week  div p:last-child {
+    font-size: 0.625rem;
+    color: var(--Medium-brown);
+}
+
+.container .spending .months {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container .spending .months p {
+    font-size: 0.75rem;
+    color: var(--Medium-brown)
+}
+
+.container .spending .months .this-month {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--Dark-brown);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container .spending .months .this-month span {
+    height: 2.2rem;
+}
+
+.container .spending .months .last-month {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.container .spending .months .last-month span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--Dark-brown);
+}
+
+@media(max-width: 375px) {
+    .container {
+        max-width: 95%;
+    }
+}

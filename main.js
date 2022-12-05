@@ -1,4 +1,4 @@
-import data from './data.json' assert { type: 'json'}
+import data from '/data.json' assert { type: 'json'}
 
 const days = document.querySelectorAll(".day");
 const daySpent = document.querySelectorAll(".day-spent");
